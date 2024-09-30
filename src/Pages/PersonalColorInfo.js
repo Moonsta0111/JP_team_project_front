@@ -5,7 +5,9 @@ function PersonalColorInfo() {
   return (
     <div>
       <h2>퍼스널컬러란?</h2>
-      {/* 퍼스널 컬러 정보 관련 콘텐츠를 여기에 추가 */}
+      <p>
+        사람의 얼굴색과 가장 어울리는 색
+      </p>
     </div>
   );
 }

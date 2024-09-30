@@ -47,7 +47,11 @@ function DiagnosisPage() {
   const captureImage = () => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
-    context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+    // 좌우 반전 적용
+    context.save(); // 기존 설정을 저장
+    context.scale(-1, 1); // 좌우 반전
+    context.drawImage(videoRef.current, -canvas.width, 0, canvas.width, canvas.height); // 좌표를 반전
+    context.restore(); // 기존 설정 복구
     
     // 이미지 파일로 변환 및 다운로드
     canvas.toBlob((blob) => {
